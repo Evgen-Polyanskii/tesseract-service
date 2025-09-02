@@ -1,0 +1,12 @@
+name: 'tesseract-service'
+
+services:
+  api:
+    build: .
+    container_name: tesseract-api
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+    environment:
+    command: python3 app.py
