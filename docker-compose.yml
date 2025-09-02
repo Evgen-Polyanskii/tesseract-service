@@ -8,5 +8,4 @@ services:
       - "5000:5000"
     volumes:
       - .:/app
-    environment:
     command: python3 app.py

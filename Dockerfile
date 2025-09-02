@@ -4,12 +4,13 @@ FROM ubuntu:22.04
 RUN apt-get update && apt-get install -y \
     tesseract-ocr \
     tesseract-ocr-rus \
+    libtesseract-dev \
+    poppler-utils \
     python3-pip \
-    python3-dev \
     && apt-get clean
 
 # Устанавливаем Python-библиотеки
-RUN pip3 install flask pillow pytesseract
+RUN pip3 install flask pillow pytesseract pdf2image
 
 # Копируем API
 COPY app.py /app/app.py
